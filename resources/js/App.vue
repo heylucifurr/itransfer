@@ -278,6 +278,5 @@ watch(
   width: 20px;
   height: 20px;
   margin-top: -5px;
-  margin-left: -5px;
 }
 </style>
