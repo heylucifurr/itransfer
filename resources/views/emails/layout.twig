@@ -69,34 +69,37 @@
 		</style>
 	</head>
 
-	<body>
-		<div class="container">
-			<div
-				class="header">
-				<!-- You can add your logo here -->
-				<h1>
-					{% block header %}{% endblock %}
-				</h1>
-			</div>
-
-			<div class="content"> {% block content %}{% endblock %}
-				{% if block('action_url') is defined %}
-					<div style="text-align: center">
-						<a href="{{ block('action_url') }}" class="button">{{ block('action_text')|default('Click Here') }}</a>
-					</div>
-					<br><br>
-					<p class="f-fallback sub">{{ settings.email_template_fallback_text }}</p>
-					<p class="f-fallback sub">{{ block('action_url') }}</p>
-				{% endif %}
-			</div>
-
-			<div class="footer">
-				<p>
-					<small>
-						<a href="{{ settings.application_url }}">{{ settings.application_name }}</a>
-					</small>
-				</p>
-			</div>
-		</div>
-	</body>
+    <body>
+    		<div class="container">
+    			<div
+    				class="header">
+    				<!-- You can add your logo here -->
+    				<a href="/">
+    				<img src="https://itrnsfr.app/images/iTransfer-logo.png" alt="iTransfer" id="logo" style="width: 200px; display: inline-block;">
+    				</a>
+    				<h1>
+    					{% block header %}{% endblock %}
+    				</h1>
+    			</div>
+    
+    			<div class="content"> {% block content %}{% endblock %}
+    				{% if block('action_url') is defined %}
+    					<div style="text-align: center">
+    						<a href="{{ block('action_url') }}" class="button">{{ block('action_text')|default('Click Here') }}</a>
+    					</div>
+    					<br><br>
+    					<p class="f-fallback sub">{{ settings.email_template_fallback_text }}</p>
+    					<p class="f-fallback sub">{{ block('action_url') }}</p>
+    				{% endif %}
+    			</div>
+    
+    			<div class="footer">
+    				<p>
+    					<small>
+    						<a href="{{ settings.application_url }}">{{ settings.application_name }}</a>
+    					</small>
+    				</p>
+    			</div>
+    		</div>
+    	</body>
 </html>
