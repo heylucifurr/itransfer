@@ -110,7 +110,7 @@ const setMode = () => {
     setPageTitle('Download Share')
   } else {
     store.setMode('upload')
-    setPageTitle('Create Share')
+    setPageTitle('Send it free!')
   }
 }
 
