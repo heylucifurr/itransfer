@@ -230,8 +230,8 @@ watch(
     <footer>
       <!-- version info: shows if show_powered_by is true -->
       <div class="powered-by" v-if="showPoweredBy">
+        <a href="https://itrnsfr.app">iTransfer <img :src="'/icon.svg'" alt="iTransfer" class="erugo-icon" /></a>
         {{ $t('Powered by') }}
-        <a href="https://itrnsfr.app"><img :src="'/icon.svg'" alt="iTransfer" class="erugo-icon" /> iTransfer</a>
       </div>
       <!-- main menu: shows if user is logged in -->
       <div class="main-menu" v-if="store.isLoggedIn()">
