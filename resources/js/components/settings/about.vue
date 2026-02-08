@@ -67,43 +67,7 @@ const OpenExternalLink = (url) => {
             <div class="setting-group" id="about_erugo">
               <div class="setting-group-body">
                 <p>{{ $t('settings.about.intro') }}</p>
-                <p>{{ $t('settings.about.created_by') }} <a href="https://github.com/deanward" target="_blank" rel="noopener noreferrer">Dean Ward</a>. {{ $t('settings.about.support_cta') }} <a href="https://ko-fi.com/deanward" target="_blank" rel="noopener noreferrer">{{ $t('settings.about.support_link') }}</a>.</p>
-                
-                <div class="about-info">
-                  <div class="version-display">
-                    <span class="version-label">{{ $t('settings.about.version') }}</span>
-                    <span class="version-value">{{ version }}</span>
-                  </div>
-
-                  <div class="license-display">
-                    <span class="license-label">{{ $t('settings.about.license') }}</span>
-                    <a href="https://github.com/DeanWard/erugo/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" class="license-value">MIT</a>
-                  </div>
-
-                  <div class="button-row">
-                    <button type="button" @click="OpenExternalLink(erugoWebsiteUrl)">
-                      <ExternalLink />
-                      {{ $t('settings.about.visit_website') }}
-                    </button>
-                    <button type="button" @click="OpenExternalLink('https://github.com/DeanWard/erugo')">
-                      <ExternalLink />
-                      {{ $t('settings.about.visit_github') }}
-                    </button>
-                    <button type="button" @click="OpenExternalLink('https://erugo.app/docs/')">
-                      <ExternalLink />
-                      {{ $t('settings.about.documentation') }}
-                    </button>
-                    <button type="button" @click="OpenExternalLink('https://discord.gg/M74X2wmqY8')">
-                      <ExternalLink />
-                      {{ $t('settings.about.discord') }}
-                    </button>
-                    <button type="button" class="donate-button" @click="OpenExternalLink('https://ko-fi.com/deanward')">
-                      <ExternalLink />
-                      {{ $t('settings.about.donate') }}
-                    </button>
-                  </div>
-                </div>
-
+           
                 <div class="credits-section">
                   <h4>{{ $t('settings.about.built_with') }}</h4>
                   <div class="credits-list">
