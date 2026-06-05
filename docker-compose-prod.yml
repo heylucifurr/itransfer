@@ -1,6 +1,6 @@
 services:
   app:
-    image: wardy784/erugo:latest
+    image: heylucifurr/itransfer:latest
     restart: unless-stopped
     volumes:
       - /Users/dean/erugo-storage/storage:/var/www/html/storage

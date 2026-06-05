@@ -3,11 +3,11 @@
 # Check if DOCKER_HUB_USERNAME is set
 if [ -z "$DOCKER_HUB_USERNAME" ]; then
     echo "Error: DOCKER_HUB_USERNAME environment variable is not set"
-    echo "Usage: DOCKER_HUB_USERNAME=yourusername ./build-push.sh [version]"
+    echo "Usage: DOCKER_HUB_USERNAME=yourusername ./publish-docker-image.sh [version]"
     exit 1
 fi
 
-# Get version from argument or use 'latest'
+IMAGE_NAME=${IMAGE_NAME:-itransfer}
 VERSION=${1:-latest}
 
 # Ensure buildx is set up correctly
@@ -18,8 +18,9 @@ docker buildx use mybuilder
 docker buildx build \
     --platform linux/amd64,linux/arm64 \
     --progress=plain \
-    -t $DOCKER_HUB_USERNAME/erugo:$VERSION \
-    -t $DOCKER_HUB_USERNAME/erugo:latest \
+    -t $DOCKER_HUB_USERNAME/$IMAGE_NAME:$VERSION \
+    -t $DOCKER_HUB_USERNAME/$IMAGE_NAME:latest \
     -f docker/alpine/Dockerfile \
+    --build-arg VERSION=$VERSION \
     --push \
     .

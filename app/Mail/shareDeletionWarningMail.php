@@ -19,13 +19,11 @@ class shareDeletionWarningMail extends Mailable
      */
     public $share;
     public $deletion_date;
-    public $deletes_in;
 
     public function __construct(Share $share)
     {
         $this->share = $share;
-        $this->deletion_date = $share->expires_at;
-        $this->deletes_in = $share->expires_at->diffForHumans();
+        $this->deletion_date = $share->deletes_at;
     }
 
     /**

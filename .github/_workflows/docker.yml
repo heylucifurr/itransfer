@@ -7,7 +7,7 @@ on:
 
 env:
   DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-  DOCKER_IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/erugo
+  DOCKER_IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/itransfer
 
 jobs:
   docker:
@@ -42,8 +42,8 @@ jobs:
             type=semver,pattern={{major}}.{{minor}}
             type=raw,value=next
           labels: |
-            org.opencontainers.image.title=Erugo
-            org.opencontainers.image.description=Erugo Docker Image
+            org.opencontainers.image.title=iTransfer
+            org.opencontainers.image.description=iTransfer Docker Image
 
       - name: Build and Push Docker image
         uses: docker/build-push-action@v5
@@ -55,6 +55,7 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
+            VERSION=${{ github.ref_name }}
             WWWGROUP=1000
           cache-from: type=gha
           cache-to: type=gha,mode=max

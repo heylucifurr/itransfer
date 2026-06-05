@@ -8,8 +8,8 @@
 <h2>Hi {{ share.user.first_name }},</h2>
 <p>This is a reminder that your share ({{ share.name }}
 	/
-	{{ share.long_id }}) will be deleted in
-	{{ deletes_in }}.</p>
+	{{ share.long_id }}) will be deleted on
+	{{ deletion_date.format('F j, Y') }}.</p>
 
 {% if share.download_count > 0 %}
 	<p>The share has been downloaded
